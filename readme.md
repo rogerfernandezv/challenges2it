@@ -33,6 +33,9 @@ DB_PASSWORD=secret
 # migrate
 php artisan migrate
 
+# storage link
+php artisan storage:link
+
 # to testing using php builtin server
 php artisan serve
 
