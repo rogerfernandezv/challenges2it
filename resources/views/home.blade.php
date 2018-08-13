@@ -29,14 +29,6 @@
 
                     <form action="{{route('process.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <!--<div class="form-group">
-                            <label for="people_xml">People</label>
-                            <input type="file" class="form-control-file" id="people_xml" name="people_xml">
-                        </div>
-                        <div class="form-group">
-                            <label for="shiporder_xml">Shiporder</label>
-                            <input type="file" class="form-control-file" id="shiporder_xml" name="shiporder_xml">
-                        </div>-->
 
                         <div class="form-group">
                             <label for="shiporder_xml">People</label>

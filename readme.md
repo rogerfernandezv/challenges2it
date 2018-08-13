@@ -57,7 +57,6 @@ https://www.getpostman.com/
 | /api/people/{id}  		| GET       | 		| people detail with id = {id}
 | /api/order  				| GET    	| 		| list all orders
 | /api/order/{id}  			| GET    	| 		| order detail with id = {id}
-| /api				  		| GET    	| 		| show endpoints
 
 ## License
 
