@@ -29,20 +29,50 @@
 
                     <form action="{{route('process.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="people_xml">People</label>
                             <input type="file" class="form-control-file" id="people_xml" name="people_xml">
                         </div>
                         <div class="form-group">
                             <label for="shiporder_xml">Shiporder</label>
                             <input type="file" class="form-control-file" id="shiporder_xml" name="shiporder_xml">
+                        </div>-->
+
+                        <div class="form-group">
+                            <label for="shiporder_xml">People</label>
+                            <div class="dropbox">
+                              <input type="file" name="people_xml" @change="checkFile($event)" accept="xml" class="input-file">
+                                <p id="people_text" style="display: block;">
+                                    Drop here your file(people_xml).
+                                </p>
+                            </div>
                         </div>
 
-                        <button class="btn">Process</button>
+                        <div class="form-group">
+                            <label for="shiporder_xml">Shiporder</label>
+                            <div class="dropbox">
+                              <input type="file" name="shiporder_xml" @change="checkFile($event)" accept="xml" class="input-file">
+                                <p id="shiporder_text" style="display: block;">
+                                    Drop here your file(shiporder_xml).
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary">Process</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function checkFile(event)
+    {
+        filename = event.target.files[0].name;
+        name = 'shiporder_text';
+        if(event.target.name == 'people_xml')
+            name = 'people_text';
+        $('#' + name ).text(filename);
+    }
+</script>
 @endsection
